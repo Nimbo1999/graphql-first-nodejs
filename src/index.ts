@@ -1,7 +1,6 @@
 import * as dotenv from 'dotenv';
 import path from 'path';
 import express from 'express';
-import { json } from 'body-parser';
 import mongoose from 'mongoose';
 
 import { ApolloServer } from 'apollo-server-express';
@@ -19,8 +18,6 @@ const graphqlServer = new ApolloServer({
 });
 
 const app = express();
-
-app.use(json());
 
 const { DB_HOST, DB_COLLECTION, DB_USER, DB_PASS, PORT } = process.env;
 mongoose.connect(
